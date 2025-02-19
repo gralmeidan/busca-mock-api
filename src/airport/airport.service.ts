@@ -4,7 +4,7 @@ import {
   NotFoundException,
   OnModuleInit,
 } from '@nestjs/common';
-import { AirportDTO } from './dto';
+import { AirportDTO, GetAirportQueryDTO } from './dto';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
@@ -39,8 +39,37 @@ export class AirportService implements OnModuleInit {
     return airport;
   }
 
-  public getAirports(): AirportDTO[] {
-    return this._airports;
+  private _normalizeString(str: string): string {
+    return str
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  private _matchQuery(query: string, airport: AirportDTO): boolean {
+    const q = this._normalizeString(query);
+
+    return [airport.Nome, airport.Iata, airport.Local].some(
+      field => field && this._normalizeString(field).includes(q)
+    );
+  }
+
+  public getAirports(query: GetAirportQueryDTO = {}): AirportDTO[] {
+    if (!query.q) {
+      return this._airports;
+    }
+
+    const results: AirportDTO[] = [];
+
+    for (const airport of this._airports) {
+      if (airport.Iata === query.q?.toUpperCase()) {
+        results.unshift(airport);
+      } else if (this._matchQuery(query.q, airport)) {
+        results.push(airport);
+      }
+    }
+
+    return results;
   }
 
   /**

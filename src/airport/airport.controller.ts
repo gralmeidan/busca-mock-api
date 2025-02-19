@@ -1,5 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
-import { Airport, AirportDTO, MetropolitanArea } from './dto';
+import { Controller, Get, Query } from '@nestjs/common';
+import {
+  Airport,
+  AirportDTO,
+  GetAirportQueryDTO,
+  MetropolitanArea,
+} from './dto';
 import { AirportService } from './airport.service';
 import { ApiExtraModels, ApiOkResponse, getSchemaPath } from '@nestjs/swagger';
 
@@ -28,7 +33,7 @@ export class AirportController {
       ],
     },
   })
-  async getAirports(): Promise<AirportDTO[]> {
-    return this.airportService.getAirports();
+  async getAirports(@Query() query: GetAirportQueryDTO): Promise<AirportDTO[]> {
+    return this.airportService.getAirports(query);
   }
 }
