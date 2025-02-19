@@ -1,21 +1,66 @@
-# POST /busca/criar
+# API de Mock Buscamilhas.
 
-Body:
-{
-cias: ["AZUL"],
-ida: "2020-10-26",
-volta: "2020-11-05",
-origem: "SAO",
-destino: "RIO",
-tipo: "Ida" | "IdaVolta",
-/// O cara também deve colocar passageiros
-/// Porém a gente não aceita esse parâmetro.
-}
+Esse projeto retorna dados mockados de vôos de linhas aéreas.
 
-# GET /busca/:id
+## Instalação
 
-Só responde todos os Vôos que batem com a pesquisa, Limita 10 por companhia.
+- Clone o repositório.
 
-# GET /aeroportos
+<details>
+  <summary>Node</summary>
 
-Responde todos os aeroportos que a gente tem data.
+- Verifique se você está na versão v20.16.0
+
+```bash
+$ node --version
+v20.16.0
+```
+
+- Instale os pacotes com npm
+
+```bash
+npm install
+```
+
+- Inicie a api.
+
+```bash
+npm run start:dev
+```
+
+</details>
+
+<details>
+  <summary>Bun</summary>
+
+- Verifique se o node está na versão correta.
+
+```bash
+$ node --version
+v20.16.0
+```
+
+- Siga as [intruções](https://bun.sh/) para seu sistema operacional para instalar o bun.
+- Instale os pacotes
+
+```bash
+bun install
+```
+
+- Inicie a api.
+
+```bash
+$ bun start:dev
+```
+
+</details>
+
+## Utilização
+
+Acesse http://localhost:3000/docs para acessar a documentação em swagger.
+
+## Env
+
+| Variável | Descrição                    | Valor Padrão |
+| -------- | ---------------------------- | ------------ |
+| `PORT`   | Porta em que a API irá rodar | `3000`       |
