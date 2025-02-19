@@ -39,6 +39,10 @@ export class AirportService implements OnModuleInit {
     return airport;
   }
 
+  public getAirports(): AirportDTO[] {
+    return this._airports;
+  }
+
   /**
    * Para fins de mock, retorna todos os aeroportos que podem ser
    * conexões para um determinado aeroporto.
