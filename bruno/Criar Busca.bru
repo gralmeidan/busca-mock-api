@@ -1,0 +1,25 @@
+meta {
+  name: Criar Busca
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/busca/criar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Companhias": [
+      "AZUL"
+    ],
+    "DataIda": "2/12/2022",
+    "DataVolta": "3/12/2022",
+    "Origem": "GRU",
+    "Destino": "MIA",
+    "Tipo": "IdaVolta"
+  }
+  
+}
