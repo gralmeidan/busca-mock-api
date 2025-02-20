@@ -9,6 +9,14 @@ Esse projeto retorna dados mockados de vôos de linhas aéreas.
 <details>
   <summary>Node</summary>
 
+- Caso não tenha o Node instalado, installe o [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script)
+
+- Com o nvm instalado, instale a versão v20.16.0 do Node
+
+```bash
+nvm install 20.16.0
+```
+
 - Verifique se você está na versão v20.16.0
 
 ```bash
