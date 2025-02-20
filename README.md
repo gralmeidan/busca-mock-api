@@ -59,6 +59,8 @@ $ bun start:dev
 
 Acesse http://localhost:3000/docs para acessar a documentação em swagger.
 
+Para acessar a collection de requisições, utilize a ferramenta [Bruno](https://www.usebruno.com/). A coleção está salva em `bruno/bruno.json`.
+
 ## Env
 
 | Variável | Descrição                    | Valor Padrão |
