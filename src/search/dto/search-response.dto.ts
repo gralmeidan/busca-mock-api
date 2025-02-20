@@ -14,15 +14,6 @@ export class FlightValueDTO {
   @ApiProperty({ example: false })
   Executivo: boolean;
 
-  @ApiProperty({ example: 0, type: Number })
-  TaxaAdulto: number;
-
-  @ApiProperty({ example: 0, type: Number })
-  TaxaCrianca: number;
-
-  @ApiProperty({ example: 0, type: Number })
-  TaxaBebe: number;
-
   @ApiProperty({ example: 50.23, type: Number })
   TaxaEmbarque: number;
 
