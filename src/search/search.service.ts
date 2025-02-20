@@ -3,7 +3,6 @@ import { SearchMock } from './search.mock';
 import {
   CreateSearchDTO,
   CreateSearchResponseDTO,
-  FlightDTO,
   SearchResponseDTO,
 } from './dto';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
