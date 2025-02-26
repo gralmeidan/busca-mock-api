@@ -9,6 +9,10 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
+  app.enableCors({
+    origin: true,
+  });
+
   SwaggerModule.setup(
     'docs',
     app,
